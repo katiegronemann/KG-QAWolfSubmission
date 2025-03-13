@@ -42,7 +42,7 @@ async function sortHackerNewsArticles() {
     if(articles.length < 100){await page.locator("a.morelink").click();}//Only click if we need to, wasted action otherwise.
 
   }//while articles < 100
-;
+
     //At this point we have a list of 100 articles, it should have been read in order of newest to oldest, but we are going to make sure. 
     //We are simply going to compare the list to a version of itself sorted by epoch (descending = newest first).
     if (articles === articles.sort((a, b) => b.time - a.time)) {
